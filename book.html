@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Book Hotels</title>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="scripts/amazon-cognito-auth.js"></script>
     <script src="scripts/main.js"></script>
     <script src="scripts/cognito.js"></script>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -42,14 +44,14 @@
             cognitoApp.Init();
             pageLoad();
 
-            $("#btnBook").bind('click', function(event){
+            $("#btnBook").bind('click', function (event) {
                 var btn = $(this)[0];
 
                 const url = new URL(window.location.href);
                 const searchParams = url.searchParams;
 
                 debugger;
-                var checkinDate  = $("#txtCheckinDate").val();
+                var checkinDate = $("#txtCheckinDate").val();
                 var checkoutDate = $("#txtCheckoutDate").val();
                 var hotelIdparam = searchParams.get('hotelId');
 
@@ -59,25 +61,26 @@
                     idToken: currentUserToken.idToken,
                     hotelId: hotelIdparam
                 };
-            
+
                 // replace the 'url' attribute below to your API's URL  
                 $.ajax({
-                    url:"<api url here>",
+                    url: "<api url here>",
                     type: 'POST',
-                    beforeSend: function(request) {
-                        request.setRequestHeader('Authorization', 'Bearer '+ currentUserToken.idToken);
+                    beforeSend: function (request) {
+                        request.setRequestHeader('Authorization', 'Bearer ' + currentUserToken.idToken);
                         request.setRequestHeader('Content-type', 'application/json');
                     },
                     contentType: 'application/json',
                     data: JSON.stringify(bookingObj),
-                success: function(response) {
-                  
-                    window.location.href="/hotel/user-booking-view.html";
-                }
-                
-            });
+                    success: function (response) {
+
+                        window.location.href = "/user-booking-view.html";
+                    }
+
+                });
             });
         });
     </script>
 </body>
+
 </html>
