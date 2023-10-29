@@ -7,7 +7,8 @@
     <script src="scripts/main.js"></script>
     <script src="scripts/cognito.js"></script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <title>Upload Photo to API Gateway</title>
 </head>
@@ -23,18 +24,19 @@
 
     <!-- replace the 'action' attribute in the form below to your API's URL -->
     <div class="container">
-        <form id="upload-form" enctype="multipart/form-data"
-         method="post" 
-         action="<api url here>">
+        <form id="upload-form" enctype="multipart/form-data" method="post"
+            action="https://c9aji89u9h.execute-api.us-east-1.amazonaws.com/Test/{admin+}">
 
             <div class="mb-3">
                 <label for="hotelName" class="form-label">Name:</label>
-                <input type="text" name="hotelName" id="hotelName" maxlength="100" class="form-control" placeholder="Hotel Name" required />
+                <input type="text" name="hotelName" id="hotelName" maxlength="100" class="form-control"
+                    placeholder="Hotel Name" required />
             </div>
 
             <div class="mb-3">
                 <label for="hotelRating" class="form-label">Rating:</label>
-                <input type="number" name="hotelRating" id="hotelRating" min="1" max="5" value="5" class="form-control" required />
+                <input type="number" name="hotelRating" id="hotelRating" min="1" max="5" value="5" class="form-control"
+                    required />
             </div>
 
             <div class="mb-3">
@@ -48,7 +50,8 @@
 
             <div class="mb-3">
                 <label for="hotelPrice" class="form-label">Price:</label>
-                <input type="number" name="hotelPrice" id="hotelPrice" min="1" max="1000" placeholder="0" class="form-control" required />
+                <input type="number" name="hotelPrice" id="hotelPrice" min="1" max="1000" placeholder="0"
+                    class="form-control" required />
             </div>
 
             <div class="mb-3">

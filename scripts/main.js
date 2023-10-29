@@ -78,10 +78,10 @@ function setAuthHeader() {
                     "Authorization",
                     "Bearer " + currentUserToken.idToken
                 );
-                request.setRequestHeader("Content-type", "multipart/form-data");
+                //request.setRequestHeader('Content-type', 'multipart/form-data; boundary=---------------------------' + new Date().getTime());
             },
             data: formData,
-            contentType: true,
+            contentType: false,
             processData: false,
             success: function (response) {
                 window.location.href = "/admin.html";
